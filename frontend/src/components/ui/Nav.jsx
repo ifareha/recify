@@ -7,15 +7,23 @@ import { store } from '@/store/store';
 import FilterCard from './FilterCard';
 
 const Nav = () => {
-
+const {isAuthenticated} = useSelector((store) => store.aut)
   return (
     <div className='w-[15%] bg-zinc-200 h-full p-7 sticky top-0 '>
         <Button>Recify</Button>
         <div className='mt-8 flex flex-col gap-5 font-semibold text-lg'>
         <Link to="/" >Home</Link>
-      
-        <Link to="favorite" >Favorite</Link>
-        <Link to="create" >Add New Recipe</Link>
+      {
+        isAuthenticated && (
+          <Link to="favorite" >Favorite</Link>
+        ) 
+      }
+      {
+        isAuthenticated && (
+          <Link to="create" >Add New Recipe</Link>
+        ) 
+      }
+       
         </div>
     
         <div className='mt-8'>

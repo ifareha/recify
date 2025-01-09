@@ -49,6 +49,10 @@ children:[
     element: <Browse/>
   },
   {
+    path : "/browse/view/:id",
+    element: <ViewRecipe/>
+  },
+  {
     path:"/favorite/:id",
     element: <Fav />
   },
