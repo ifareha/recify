@@ -7,19 +7,19 @@ import { store } from '@/store/store';
 import FilterCard from './FilterCard';
 
 const Nav = () => {
-const {isAuthenticated} = useSelector((store) => store.auth)
+const {user} = useSelector((store) => store.auth)
   return (
     <div className='w-[15%] bg-zinc-200 h-full p-7 sticky top-0 '>
         <Button>Recify</Button>
         <div className='mt-8 flex flex-col gap-5 font-semibold text-lg'>
         <Link to="/" >Home</Link>
       {
-        isAuthenticated && (
+        user && (
           <Link to="favorite" >Favorite</Link>
         ) 
       }
       {
-        isAuthenticated && (
+        user && (
           <Link to="create" >Add New Recipe</Link>
         ) 
       }
