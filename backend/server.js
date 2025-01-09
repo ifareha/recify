@@ -20,10 +20,15 @@ app.use(cors({
     origin: 'http://localhost:5173', 
     credentials: true, 
 }));
+const _dirname = path.resolve();
+app.use(express.static(path.join(_dirname,"/frontend/dist")));
 
 app.use("/api/users", userRouter)
 app.use("/api/cover", coverRouter)
 app.use("/api/recipes",recipeRouter)
+app.get("*", (req, res) => {
+    res.sendFile(path.resolve(_dirname, "frontend", "dist", "index.html"));
+});
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
