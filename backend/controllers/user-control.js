@@ -113,7 +113,7 @@ export const userProfile =async (req, res) => {
 }
 export const updateProfile = async (req, res) => {
     try {
-        const userId = req.id;
+        const userId = req.userId;
         const { username } = req.body;
         const user = await User.findById(userId);
         if (!user) {
