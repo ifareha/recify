@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 app.use(cors({
-    origin: 'http://localhost:5173', 
+    origin: 'https://recify.onrender.com/', 
     credentials: true, 
 }));
 const _dirname = path.resolve();
