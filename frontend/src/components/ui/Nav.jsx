@@ -7,7 +7,7 @@ import { store } from '@/store/store';
 import FilterCard from './FilterCard';
 
 const Nav = () => {
-const {isAuthenticated} = useSelector((store) => store.aut)
+const {isAuthenticated} = useSelector((store) => store.auth)
   return (
     <div className='w-[15%] bg-zinc-200 h-full p-7 sticky top-0 '>
         <Button>Recify</Button>
